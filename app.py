@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import streamlit as st
 
 # Usar CSS para hacer que la imagen cubra toda la pantalla
