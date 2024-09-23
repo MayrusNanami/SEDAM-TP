@@ -1,6 +1,5 @@
 import streamlit as st
 from PIL import Image
-import base64
 
 # Función para agregar fondo azul y cuadro blanco para el login
 def add_background_image():
@@ -20,9 +19,9 @@ def add_background_image():
             border-radius: 10px;
             width: 350px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }}
         .login-container h2 {{
-            text-align: center;
             color: #333;
             margin-bottom: 30px;
         }}
@@ -43,7 +42,6 @@ def add_background_image():
             margin-bottom: 10px;
         }}
         .login-container p {{
-            text-align: center;
             color: #555;
         }}
         .login-container a {{
