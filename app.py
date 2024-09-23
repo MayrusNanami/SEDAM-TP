@@ -11,7 +11,7 @@ def set_background(png_file):
             f"""
             <style>
             .stApp {{
-                background-image: url("data:image/Fondo dos.png;base64,{b64}");
+                background-image: url("data:image/Fondo tres.png;base64,{b64}");
                 background-size: cover;
                 background-position: center;
                 height: 100vh;
