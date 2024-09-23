@@ -40,12 +40,12 @@ def add_background_image(image_file):
             unsafe_allow_html=True
         )
 
-
-# Añade el fondo del logo
-add_background_image("images/Logoo.png")
+# Llamar a la función para añadir la imagen de fondo (si es necesario)
+# Añade el fondo del logo, por ejemplo "images/Iniciar Sesion.png"
+add_background_image("images/Iniciar Sesion.png")
 
 # Logo de la empresa
-logo = Image.open("images/Logoo.png")  # Ajusta la ruta de tu imagen
+logo = Image.open("images/Iniciar Sesion.png")  # Ajusta la ruta de tu imagen
 st.image(logo, width=200)
 
 # Contenido del formulario de inicio de sesión
@@ -62,5 +62,3 @@ if st.button("Iniciar sesión", key="login"):
 # Enlaces adicionales
 st.markdown('<p style="color: white;">¿Olvidaste tu contraseña?</p>', unsafe_allow_html=True)
 st.markdown('<p style="color: white;">¿No tienes una cuenta? <a href="#" style="color: #007BFF;">Registrarte</a></p>', unsafe_allow_html=True)
-
-    st.markdown('</div>', unsafe_allow_html=True)
