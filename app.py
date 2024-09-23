@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import base64
 
-# Función para agregar la imagen de fondo y ajustarla al 100% de la pantalla
+# Función para agregar la imagen de fondo y ajustarla
 def set_background(png_file):
     with open(png_file, "rb") as f:
         data = f.read()
@@ -12,7 +12,7 @@ def set_background(png_file):
             <style>
             .stApp {{
                 background-image: url("data:image/png;base64,{b64}");
-                background-size: 100% 100%;  /* Ajustar la imagen al 100% de la pantalla */
+                background-size: 100% 100%;
                 background-repeat: no-repeat;
                 background-position: center;
                 height: 100vh;
