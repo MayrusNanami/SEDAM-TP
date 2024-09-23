@@ -6,56 +6,44 @@ import base64
 def add_background_image(image_file):
     with open(image_file, "rb") as image:
         encoded_image = base64.b64encode(image.read()).decode()
-        st.markdown(
-            """
-            <style>
-            body {
-                background-color: #004080; /* Fondo azul */
-            }
-            .login-container {
-                background-color: white;
-                padding: 50px;
-                border-radius: 10px;
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-                text-align: center;
-                width: 350px;
-                margin: 0 auto;
-            }
-            .login-container img {
-                width: 150px;
-                margin-bottom: 20px;
-            }    
-            .logo-img {{
-                margin-bottom: 20px;
-                width: 150px;
-            }}
-            .btn {{
-                background-color: #007BFF;
-                color: white;
-                padding: 10px;
-                font-size: 16px;
-                border-radius: 5px;
-                margin-top: 10px;
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #004080; /* Fondo azul */
+    }
+    .login-container {
+        background-color: white;
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 350px;
+        margin: 0 auto;
+    }
+    .login-container img {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
-# Llamar a la función para añadir la imagen de fondo 
+
+
+
+# Colocar el contenido dentro de la caja blanca
+with st.container():
+    
+    # Llamar a la función para añadir la imagen de fondo 
     # Añade el fondo del logo
     add_background_image("images/Logoo.png")
     
     # Logo de la empresa
     logo = Image.open("images/Logoo.png")  # Ajusta la ruta de tu imagen
     st.image(logo, width=200)
-
-
-# Colocar el contenido dentro de la caja blanca
-with st.container():
-    
-    
     
     st.markdown('<div class="login-container">', unsafe_allow_html=True)
     
