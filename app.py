@@ -42,7 +42,7 @@ def add_background_image(image_file):
 
 # Llamar a la función para añadir la imagen de fondo (si es necesario)
 # Añade el fondo del logo, por ejemplo "images/Iniciar Sesion.png"
-add_background_image("images/Iniciar Sesion.png")
+add_background_image("images/Fondo.png")
 
 # Logo de la empresa
 logo = Image.open("images/Iniciar Sesion.png")  # Ajusta la ruta de tu imagen
