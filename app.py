@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import base64
 
-# Función para agregar la imagen de fondo y ajustarla
+# Función para agregar la imagen de fondo y ajustarla al 100% de la pantalla
 def set_background(png_file):
     with open(png_file, "rb") as f:
         data = f.read()
@@ -12,7 +12,7 @@ def set_background(png_file):
             <style>
             .stApp {{
                 background-image: url("data:image/png;base64,{b64}");
-                background-size: 100% 100%;
+                background-size: 100% 100%;  /* Ajustar la imagen al 100% de la pantalla */
                 background-repeat: no-repeat;
                 background-position: center;
                 height: 100vh;
@@ -56,16 +56,6 @@ def set_background(png_file):
                 color: #007BFF;
                 text-decoration: none;
             }}
-            .btn-exit {{
-                position: absolute;
-                bottom: 20px;
-                left: 20px;
-                background-color: #FF5555;
-                color: white;
-                padding: 10px;
-                border-radius: 5px;
-                font-size: 14px;
-            }}
             </style>
             """,
             unsafe_allow_html=True
@@ -105,16 +95,13 @@ def login():
 
 
 def inicio():
-    set_background("images/Inicio.png")
+    set_background("images/Inicio.png")  # Aquí ajustamos la imagen de fondo a Inicio.png
 
     # Mostrar opciones de navegación o contenido del inicio
     st.markdown('<h2>Bienvenido al sistema</h2>', unsafe_allow_html=True)
 
-    # Botón de salir en la parte inferior izquierda
-    st.markdown('<button class="btn-exit">Salir</button>', unsafe_allow_html=True)
-    
-    # Si se presiona el botón salir, volver al login
-    if st.button("Salir", key="exit"):
+    # Botón de salir
+    if st.button("Salir"):
         st.session_state['logged_in'] = False
 
 
