@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 import base64
 
-# Función para agregar la imagen de fondo
+# Función para agregar la imagen de fondo y ajustarla al 100% de la pantalla
 def set_background(png_file):
     with open(png_file, "rb") as f:
         data = f.read()
@@ -12,7 +12,8 @@ def set_background(png_file):
             <style>
             .stApp {{
                 background-image: url("data:image/png;base64,{b64}");
-                background-size: cover;
+                background-size: 100% 100%;  /* Ajustar la imagen al 100% de la pantalla */
+                background-repeat: no-repeat;
                 background-position: center;
                 height: 100vh;
             }}
@@ -94,7 +95,7 @@ def login():
 
 
 def inicio():
-    set_background("images/Inicio.png")
+    set_background("images/Inicio.png")  # Aquí ajustamos la imagen de fondo a Inicio.png
 
     # Mostrar opciones de navegación o contenido del inicio
     st.markdown('<h2>Bienvenido al sistema</h2>', unsafe_allow_html=True)
