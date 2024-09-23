@@ -41,9 +41,7 @@ with st.container():
     # Añade el fondo del logo
     add_background_image("images/Logoo.png")
     
-    # Logo de la empresa
-    logo = Image.open("images/Logoo.png")  # Ajusta la ruta de tu imagen
-    st.image(logo, width=200)
+    
     
     st.markdown('<div class="login-container">', unsafe_allow_html=True)
     
