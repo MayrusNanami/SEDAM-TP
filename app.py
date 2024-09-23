@@ -105,13 +105,16 @@ def login():
 
 
 def inicio():
-    set_background("images/Inicio.png")  # Aquí ajustamos la imagen de fondo a Inicio.png
+    set_background("images/Inicio.png")
 
     # Mostrar opciones de navegación o contenido del inicio
     st.markdown('<h2>Bienvenido al sistema</h2>', unsafe_allow_html=True)
 
-    # Botón de salir
-    if st.button("Salir"):
+    # Botón de salir en la parte inferior izquierda
+    st.markdown('<button class="btn-exit">Salir</button>', unsafe_allow_html=True)
+    
+    # Si se presiona el botón salir, volver al login
+    if st.button("Salir", key="exit"):
         st.session_state['logged_in'] = False
 
 
