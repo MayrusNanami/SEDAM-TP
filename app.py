@@ -10,9 +10,8 @@ def add_background_image(image_file):
             f"""
             <style>
             .stApp {{
-                background-image: url("data:image/Fondo.png;base64,{encoded_image}");
-                background-size: 80% auto;
-                background-repeat: no-repeat;
+                background-color: #0066A2;  /* Color de fondo azul */
+                background-size: cover;
                 background-position: center;
                 height: 100vh;
             }}
