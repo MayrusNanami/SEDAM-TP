@@ -45,7 +45,7 @@ def add_background_image(image_file):
 add_background_image("images/Fondo.png")
 
 # Logo de la empresa
-logo = Image.open("images/Iniciar Sesion.png")  # Ajusta la ruta de tu imagen
+logo = Image.open("images/Fondo.png")  # Ajusta la ruta de tu imagen
 st.image(logo, width=200)
 
 # Contenido del formulario de inicio de sesión
