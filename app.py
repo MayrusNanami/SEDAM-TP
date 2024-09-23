@@ -56,6 +56,16 @@ def set_background(png_file):
                 color: #007BFF;
                 text-decoration: none;
             }}
+            .btn-exit {{
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                background-color: #FF5555;
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                font-size: 14px;
+            }}
             </style>
             """,
             unsafe_allow_html=True
