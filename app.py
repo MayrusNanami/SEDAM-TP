@@ -6,63 +6,61 @@ import base64
 def add_background_image(image_file):
     with open(image_file, "rb") as image:
         encoded_image = base64.b64encode(image.read()).decode()
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #004080; /* Fondo azul */
-    }
-    .login-container {
-        background-color: white;
-        padding: 50px;
-        border-radius: 10px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-        width: 350px;
-        margin: 0 auto;
-    }
-    .login-container img {
-        width: 150px;
-        margin-bottom: 20px;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-color: #0066A2;  /* Color de fondo azul */
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+            }}
+            .login-container {{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                text-align: center;
+            }}
+            .logo-img {{
+                margin-bottom: 20px;
+                width: 150px;
+            }}
+            .btn {{
+                background-color: #007BFF;
+                color: white;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+                margin-top: 10px;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
 
+# Llamar a la función para añadir la imagen de fondo (si es necesario)
+# Añade el fondo del logo, por ejemplo "images/Iniciar Sesion.png"
+add_background_image("images/Logoo.png")
 
+# Logo de la empresa
+logo = Image.open("images/Logoo.png")  # Ajusta la ruta de tu imagen
+st.image(logo, width=200)
 
+# Contenido del formulario de inicio de sesión
+st.markdown("<h2 style='color: white;'>Sistema de Login</h2>", unsafe_allow_html=True)
 
+# Crear formulario de inicio de sesión
+usuario = st.text_input("Usuario", placeholder="admin")
+contrasena = st.text_input("Contraseña", type='password', placeholder="********")
 
-# Colocar el contenido dentro de la caja blanca
-with st.container():
-    
-    # Llamar a la función para añadir la imagen de fondo 
-    # Añade el fondo del logo
-    add_background_image("images/Logoo.png")
-    # Logo de la empresa
-    logo = Image.open("images/Logoo.png")  # Ajusta la ruta de tu imagen
-    st.image(logo, width=200)
-    
-    
-    st.markdown('<div class="login-container">', unsafe_allow_html=True)
-    
-    # Mostrar el logo
-    st.image(logo, use_column_width=False)
+# Botón de inicio de sesión
+if st.button("Iniciar sesión", key="login"):
+    st.success(f"Bienvenido {usuario}")
 
-    # Título de la página
-    st.markdown("<h2>Sistema de Login</h2>", unsafe_allow_html=True)
+# Enlaces adicionales
+st.markdown('<p style="color: white;">¿Olvidaste tu contraseña?</p>', unsafe_allow_html=True)
+st.markdown('<p style="color: white;">¿No tienes una cuenta? <a href="#" style="color: #007BFF;">Registrarte</a></p>', unsafe_allow_html=True)
 
-    # Campos de usuario y contraseña
-    usuario = st.text_input("Usuario", "admin", key="usuario")
-    contrasena = st.text_input("Contraseña", type="password", key="contrasena")
-
-    # Botón de inicio de sesión
-    if st.button("Iniciar sesión"):
-        st.success(f"Bienvenido {usuario}")
-
-    # Opciones de contraseña olvidada y registro
-    st.markdown('<a href="#">¿Olvidaste tu contraseña?</a>', unsafe_allow_html=True)
-    st.markdown('<a href="#">¿No tienes una cuenta? <b>Registrarte</b></a>', unsafe_allow_html=True)
-    
     st.markdown('</div>', unsafe_allow_html=True)
