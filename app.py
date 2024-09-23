@@ -3,55 +3,63 @@ from PIL import Image
 import base64
 
 # Función para mostrar el fondo azul y el logo
-def add_background_image(image_file):
-    with open(image_file, "rb") as image:
-        encoded_image = base64.b64encode(image.read()).decode()
-        st.markdown(
-            f"""
-            <style>
-            .stApp {{
-                background-color: #0066A2;  /* Color de fondo azul */
-                background-size: cover;
-                background-position: center;
-                height: 100vh;
-            }}
-            .login-container {{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                text-align: center;
-            }}
-            .logo-img {{
-                margin-bottom: 20px;
-                width: 150px;
-            }}
-            .btn {{
-                background-color: #007BFF;
-                color: white;
-                padding: 10px;
-                font-size: 16px;
-                border-radius: 5px;
-                margin-top: 10px;
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
+def add_background_image():
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-color: #0066A2;  /* Color de fondo azul */
+            height: 100vh;
+        }}
+        .login-container {{
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            margin: 100px auto;
+            text-align: center;
+        }}
+        .login-container h2 {{
+            color: #333333;
+            margin-bottom: 20px;
+        }}
+        .login-container input {{
+            margin-bottom: 10px;
+        }}
+        .login-container button {{
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }}
+        .login-container p {{
+            color: #333333;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
-# Llamar a la función para añadir la imagen de fondo
-# Añade el fondo del logo
-add_background_image("images/Logoo.png")
-
-# Logo de la empresa
+# Añadir la imagen del logo
 logo = Image.open("images/Logoo.png")  # Ajusta la ruta de tu imagen
-st.image(logo, width=200)
 
-# Contenido del formulario de inicio de sesión
-st.markdown("<h2 style='color: white;'>Sistema de Login</h2>", unsafe_allow_html=True)
+# Aplicar el estilo de fondo
+add_background_image()
 
-# Crear formulario de inicio de sesión
+# Crear el contenedor del login
+st.markdown('<div class="login-container">', unsafe_allow_html=True)
+
+# Mostrar el logo
+st.image(logo, width=150)
+
+# Título del login
+st.markdown("<h2>Sistema de Login</h2>", unsafe_allow_html=True)
+
+# Campos de usuario y contraseña
 usuario = st.text_input("Usuario", placeholder="admin")
 contrasena = st.text_input("Contraseña", type='password', placeholder="********")
 
@@ -59,6 +67,10 @@ contrasena = st.text_input("Contraseña", type='password', placeholder="********
 if st.button("Iniciar sesión", key="login"):
     st.success(f"Bienvenido {usuario}")
 
-# Enlaces adicionales
-st.markdown('<p style="color: white;">¿Olvidaste tu contraseña?</p>', unsafe_allow_html=True)
-st.markdown('<p style="color: white;">¿No tienes una cuenta? <a href="#" style="color: #007BFF;">Registrarte</a></p>', unsafe_allow_html=True)
+# Enlaces de ayuda
+st.markdown('<p>¿Olvidaste tu contraseña?</p>', unsafe_allow_html=True)
+st.markdown('<p>¿No tienes una cuenta? <a href="#" style="color: #007BFF;">Registrarte</a></p>', unsafe_allow_html=True)
+
+# Cerrar el contenedor
+st.markdown('</div>', unsafe_allow_html=True)
+
