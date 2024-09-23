@@ -63,7 +63,7 @@ def set_background(png_file):
 
 # Llamar a la función para establecer la imagen de fondo
 def login():
-    set_background("images/Fondo dos.png")
+    set_background("images/Fondo cuatro.png")
 
     # Contenedor de login
     st.markdown('<div class="login-container">', unsafe_allow_html=True)
