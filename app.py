@@ -10,6 +10,9 @@ def add_background_image():
         .stApp {{
             background-color: #0066A2;  /* Color de fondo azul */
             height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }}
         .login-container {{
             background-color: white;
@@ -17,7 +20,6 @@ def add_background_image():
             border-radius: 15px;
             box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
             width: 350px;
-            margin: 100px auto;
             text-align: center;
         }}
         .login-container h2 {{
@@ -73,4 +75,3 @@ st.markdown('<p>¿No tienes una cuenta? <a href="#" style="color: #007BFF;">Regi
 
 # Cerrar el contenedor
 st.markdown('</div>', unsafe_allow_html=True)
-
