@@ -11,7 +11,7 @@ def add_background_image(image_file):
             <style>
             .stApp {{
                 background-image: url("data:image/png;base64,{encoded_image}");
-                background-size: 100% auto;
+                background-size: 80% auto;
                 background-repeat: no-repeat;
                 background-position: center;
                 height: 100vh;
