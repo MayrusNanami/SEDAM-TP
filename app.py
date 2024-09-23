@@ -68,7 +68,7 @@ st.markdown('<div class="login-container">', unsafe_allow_html=True)
 
 # Logo de la empresa
 logo = Image.open("images/Logoo.png")  # Asegúrate de que esta sea la ruta correcta a tu imagen
-st.image(logo, width=120)
+st.image(logo, width=240)
 
 # Título del sistema de login
 st.markdown("<h2>Sistema de Login</h2>", unsafe_allow_html=True)
