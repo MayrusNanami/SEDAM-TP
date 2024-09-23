@@ -42,10 +42,10 @@ def add_background_image(image_file):
 
 # Llamar a la función para añadir la imagen de fondo 
 # Añade el fondo del logo
-add_background_image("images/Logo.png")
+add_background_image("images/Logoo.png")
 
 # Logo de la empresa
-logo = Image.open("images/Logo.png")  # Ajusta la ruta de tu imagen
+logo = Image.open("images/Logoo.png")  # Ajusta la ruta de tu imagen
 st.image(logo, width=200)
 
 # Contenido del formulario de inicio de sesión
